@@ -1,20 +1,20 @@
 const URL = process.env.REACT_APP_BACKEND;
 
 const PostService = {
-    getPosts: async (cityid) => {
+    getPosts: async (city_id) => {
         const response = await fetch(URL + "/cities");
         const data = await response.json();
         return data
     },
 
     getPost: async (postId) => {
-        const response = await fetch(URL + "cities/" + postId);
+        const response = await fetch(URL + "/cities/" + postId);
         const data = await response.json();
         return data
     },
 
-    addPosts: async (cityid, newPost) => {
-        const response = await fetch(URL + "/cities/" + cityid + "/create", {
+    addPosts: async (city_id, newPost) => {
+        const response = await fetch(URL + "/cities/" + city_id + "/create", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const PostService = {
     },
 
     updatePost: async (post, id) => {
-        const response = await fetch(URL + "/cities/" + post.id, {
+        const response = await fetch(URL + "/cities/" + post.post_id, {
             method: "put",
             headers: {
                 "Content-Type": "application/json",

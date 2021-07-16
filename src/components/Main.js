@@ -2,28 +2,28 @@ import Edit from "../pages/Edit";
 import Home from "../pages/Home";
 import New from "../pages/New";
 import Posts from "../pages/Posts";
-import PostService from "../services/PostServices";
-import React, { useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+// import PostService from "../services/PostServices";
+import React from "react";
+import { Route, Switch, useHistory } from "react-router-dom";
 
 function Main(props) {
-    const history = useNavigate();
-    const [posts, setPosts] = useState(null);
+    const history = useHistory();
+    // const [posts, setPosts] = useState(null);
 
 
     const redirectToCityPosts = (cityId) => {
       history.push(`/cities/${cityId}`)
     };
 
-    const onAdd = async (post) => {
-      const {city_id} = await PostService.addPosts(post)
-      redirectToCityPosts(city_id);
-    };
+    // const onAdd = async (post) => {
+    //   const {city_id} = await PostService.addPosts(post)
+    //   redirectToCityPosts(city_id);
+    // };
 
 
     return (
     <div>
-      <Routes>
+      <Switch>
         <Route
           exact
           path="/cities"
@@ -31,12 +31,12 @@ function Main(props) {
         />
         <Route
           exact
-          path="/cities/:cityid"
+          path="/cities/:city_id"
           render={(routerProps) => <Posts {...routerProps} />}
         />
         <Route
           exact
-          path="/cities/:cityid/create"
+          path="/cities/:city_id/create"
           render={(routerProps) => (
             <New
               {...routerProps}
@@ -46,7 +46,7 @@ function Main(props) {
         />
         <Route
           exact
-          path="/cities/:cityid/posts/:postid/edit"
+          path="/cities/:city_id/posts/:post_id/edit"
           render={(routerProps) => (
             <Edit
               {...routerProps}
@@ -54,7 +54,7 @@ function Main(props) {
             />
           )}
         />
-      </Routes>    
+      </Switch>
     </div>
   );
 }
