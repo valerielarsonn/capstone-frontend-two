@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 import New from "../pages/New";
 import Posts from "../pages/Posts";
 // import PostService from "../services/PostServices";
-import React, {useState} from "react";
+import React from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 
 function Main(props) {
