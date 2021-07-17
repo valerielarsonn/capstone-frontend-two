@@ -8,7 +8,7 @@ import { Route, Switch, useHistory } from "react-router-dom";
 
 function Main(props) {
     const history = useHistory();
-    const [posts, setPosts] = useState([]);
+    // const [posts, setPosts] = useState([]);
 
 
     const redirectToCityPosts = (cityId) => {

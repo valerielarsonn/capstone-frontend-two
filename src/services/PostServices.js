@@ -32,7 +32,7 @@ const PostService = {
         console.log("3")
         const data = await response;
         console.log("4")
-        return 
+        return data
     },
 
     updatePost: async (post) => {
@@ -50,7 +50,7 @@ const PostService = {
             body: JSON.stringify(post),
         }) ;
         const data = await response;
-        return 
+        return data
     },
 
     deletePost: async (post) => {
@@ -58,7 +58,7 @@ const PostService = {
             method: "delete",
         });
         const data = await response;
-        return 
+        return data
     }
 }
 
