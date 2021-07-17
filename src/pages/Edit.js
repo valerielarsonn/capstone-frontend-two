@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import Form from "../components/Form";
 import PostService from "../services/PostServices";
 
-import "../app.css";
+import '../styles.scss';
 
 const Edit = (props) => {
-  const [targetPost, setTargetPost] = useState([]);
+  const [targetPost, setTargetPost] = useState(null);
   const cityId = props.match.params.city_id;
   const postId = props.match.params.post_id;
   useEffect(() => {
-      PostService.getPost(postId).then(p => {
+      PostService.getPosts(postId).then(p => {
         setTargetPost(p);
       })
   }, [postId])
@@ -23,7 +23,6 @@ const Edit = (props) => {
 
     return (
       <div className= "App">
-        <h1>test</h1>
         { targetPost && <Form
           initialPost={targetPost}
           handleSubmit={onUpdate}

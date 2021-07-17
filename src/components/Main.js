@@ -6,6 +6,7 @@ import Posts from "../pages/Posts";
 import React from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 
+
 function Main(props) {
     const history = useHistory();
     // const [posts, setPosts] = useState([]);

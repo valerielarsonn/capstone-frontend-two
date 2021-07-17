@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../styles.scss';
 
 const Form = ({initialPost, handleSubmit, buttonLabel, loadPost}) => {
     // const [city, setCity] = useState(null);

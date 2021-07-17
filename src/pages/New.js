@@ -2,7 +2,7 @@ import React from "react";
 import Form from "../components/Form";
 import PostService from "../services/PostServices";
 
-import "../app.css";
+import '../styles.scss';
 
 const New = (props) => {
   const cityId = props.match.params.city_id;

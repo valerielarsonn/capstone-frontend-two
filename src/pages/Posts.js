@@ -3,13 +3,7 @@ import { useHistory, Link } from "react-router-dom";
 import Post from "../components/Post";
 import PostService from "../services/PostServices";
 
-import "../app.css";
-
-
-    // const onAdd = async (post) => {
-    //   const {city_id} = await PostService.addPosts(post)
-    //   redirectToCityPosts(city_id);
-    // };
+import '../styles.scss';
 
 
 const Posts = (props) => {
@@ -38,7 +32,7 @@ const Posts = (props) => {
 
     return (
         <div className="App">
-          <h1>Posts</h1>
+            <br></br>
             {<Link to={`/cities/${cityId}/create`}><button>Create a new Posting</button></Link> }
             {posts.map((post) => <Post post={post} editPost={editPost} deletePost={deletePost} key={post.post_id}/>)}
         </div>
@@ -46,3 +40,10 @@ const Posts = (props) => {
 }
 
 export default Posts;
+
+
+    // const onAdd = async (post) => {
+    //   const {city_id} = await PostService.addPosts(post)
+    //   redirectToCityPosts(city_id);
+    // };
+

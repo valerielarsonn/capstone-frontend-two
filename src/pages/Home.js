@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../app.css";
+import '../styles.scss';
 
 const Home = (posts) => {
 
         return (
-            <div className="App">
-                <h1>See different postings for van parking spots in the following cities: </h1>
+            <div className="home">
+                <h1>LOOK THROUGH POSTINGS ON SPOTS YOU CAN PARK YOUR HOME</h1>
                 <Link to="/cities/1">
                 Denver, CO
                 </Link>

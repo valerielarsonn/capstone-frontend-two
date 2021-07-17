@@ -7,13 +7,6 @@ const PostService = {
         return data.posts
     },
 
-    // getPost: async (postId) => {
-    //     console.log("testing getpost")
-    //     const response = await fetch(URL + "/posts/" + postId);
-    //     const data = await response.json();
-    //     return data.post
-    // },
-
     addPosts: async (newPost) => {
         console.log("1")
         newPost.twenty_hookup = (newPost.twenty_hookup ==="true")
@@ -63,3 +56,10 @@ const PostService = {
 }
 
 export default PostService;
+
+    // getPost: async (postId) => {
+    //     console.log("testing getpost")
+    //     const response = await fetch(URL + "/posts/" + postId);
+    //     const data = await response.json();
+    //     return data.post
+    // },
