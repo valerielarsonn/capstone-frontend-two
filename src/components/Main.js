@@ -3,22 +3,17 @@ import Home from "../pages/Home";
 import New from "../pages/New";
 import Posts from "../pages/Posts";
 // import PostService from "../services/PostServices";
-import React from "react";
+import React, {useState} from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 
 function Main(props) {
     const history = useHistory();
-    // const [posts, setPosts] = useState(null);
+    const [posts, setPosts] = useState([]);
 
 
     const redirectToCityPosts = (cityId) => {
       history.push(`/cities/${cityId}`)
     };
-
-    // const onAdd = async (post) => {
-    //   const {city_id} = await PostService.addPosts(post)
-    //   redirectToCityPosts(city_id);
-    // };
 
 
     return (
@@ -27,12 +22,12 @@ function Main(props) {
         <Route
           exact
           path="/cities"
-          render={(routerProps) => <Home {...routerProps} />}
+          render={(routerProps) => <Home {...routerProps}/>}
         />
         <Route
           exact
           path="/cities/:city_id"
-          render={(routerProps) => <Posts {...routerProps} />}
+          render={(routerProps) => <Posts {...routerProps}/>}
         />
         <Route
           exact
